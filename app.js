@@ -1,6 +1,13 @@
 import express from "express";
+import notesRouter from './api/notes.js';
+const express = require('express')
 const app = express();
 export default app;
+
+app.use(express.json());
+
+const notesRouter = require('./api/notes');
+app.use('/notes', notesRouter);
 
 // Simple logging middleware
 app.use((req, res, next) => {
